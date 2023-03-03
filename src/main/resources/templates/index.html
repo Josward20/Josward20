@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}"></title>
+</head>
+<body>
+    <h1 th:text="${titulo}"></h1>
+
+    <form th:action="@{/vista/pago}" method="POST">
+        <select  id="nombre" name="nombre">
+            <option th:each="persona: ${registro.emp}"  th:text="${persona.per.nombre+' '+persona.per.apellido}" name="nombre"> <option>
+        </select>
+      <input type="submit" value="Enviar">
+    </form>
+
+    
+</body>
+</html>
+
+
+

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1 th:text="${nombre}"></h1>
+
+<div th:each="persona: ${registro.emp}" th:if="${persona.per.nombre+' '+persona.per.apellido == nombre}" th:text="${'Tipo de Empleado:'+persona.tipo}"></div>
+<div th:each="persona: ${registro.emp}" th:if="${persona.per.nombre+' '+persona.per.apellido == nombre}" th:text="${'Hora trabajadas:'+persona.hora}"></div>
+<div th:each="persona: ${registro.emp}" th:if="${persona.per.nombre+' '+persona.per.apellido == nombre}" th:text="${'Monto a pagar:'+persona.calculo(persona.tipo)}"></div>
+
+    
+</body>
+</html>
